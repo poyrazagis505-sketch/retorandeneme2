@@ -1,0 +1,144 @@
+/* =========================================================
+   AUTHENTICATION PAGES (Login, Signup, etc.)
+   Çocuğa anlatır gibi basit ve temiz tasarım
+   ========================================================= */
+
+.auth-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+  background: linear-gradient(135deg, #180f0d 0%, #211512 100%);
+}
+
+.auth-container {
+  width: 100%;
+  max-width: 420px;
+}
+
+.auth-card {
+  background-color: var(--color-surface);
+  border-radius: var(--radius-card);
+  padding: 32px 24px;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--color-line);
+}
+
+/* Logo */
+.auth-logo {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 20px;
+  color: var(--color-gold);
+}
+
+.flame-icon {
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+}
+
+/* Başlık */
+.auth-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.8rem;
+  color: var(--color-cream);
+  text-align: center;
+  margin-bottom: 6px;
+}
+
+.auth-subtitle {
+  font-size: 0.95rem;
+  color: var(--color-cream-dim);
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+/* Form */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.auth-form .form-group {
+  margin-bottom: 0;
+}
+
+.auth-form .form-group label {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Alt Linkler */
+.auth-footer {
+  text-align: center;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid var(--color-line);
+}
+
+.forgot-password-link {
+  font-size: 0.9rem;
+  color: var(--color-gold);
+}
+
+.forgot-password-link:hover {
+  color: var(--color-cream);
+  text-decoration: underline;
+}
+
+/* Dev Info (Test Bilgileri) */
+.dev-info {
+  margin-top: 24px;
+  padding: 12px;
+  background-color: rgba(245, 158, 11, 0.1);
+  border-left: 4px solid var(--color-warning);
+  border-radius: 4px;
+  font-size: 0.85rem;
+  color: var(--color-cream-dim);
+}
+
+.dev-info p {
+  margin-bottom: 6px;
+}
+
+.dev-info p:last-child {
+  margin-bottom: 0;
+}
+
+.dev-info code {
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-family: monospace;
+  color: var(--color-cream);
+}
+
+.dev-info small {
+  color: var(--color-cream-dim);
+  opacity: 0.7;
+}
+
+/* Button Loading State */
+.btn-loader {
+  display: inline-flex;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .auth-card {
+    padding: 24px 20px;
+  }
+
+  .auth-title {
+    font-size: 1.5rem;
+  }
+
+  .auth-subtitle {
+    font-size: 0.9rem;
+    margin-bottom: 24px;
+  }
+}
