@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard | Ember Sofrası Admin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/admin-style.css" />
+  <link rel="stylesheet" href="css/dashboard.css" />
+</head>
+<body class="dashboard-page">
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-logo">
+        <svg viewBox="0 0 48 48" class="flame-icon">
+          <path d="M24 4c2 6-4 8-4 14 0 3 2 5 4 5s4-2 4-5c3 3 5 7 5 11 0 7-6 12-13 12S7 34 7 27c0-9 7-14 9-20 1 3 0 6 2 7 1-4-1-6 0-10 2 3 4 5 6 0z"/>
+        </svg>
+      </div>
+      <h1 class="sidebar-title">Ember Admin</h1>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a href="dashboard.html" class="nav-link active">
+        <span class="nav-icon">📊</span>
+        <span class="nav-text">Dashboard</span>
+      </a>
+      <a href="categories.html" class="nav-link">
+        <span class="nav-icon">📂</span>
+        <span class="nav-text">Kategoriler</span>
+      </a>
+      <a href="products.html" class="nav-link">
+        <span class="nav-icon">🍔</span>
+        <span class="nav-text">Ürünler</span>
+      </a>
+      <a href="settings.html" class="nav-link">
+        <span class="nav-icon">⚙️</span>
+        <span class="nav-text">Ayarlar</span>
+      </a>
+    </nav>
+
+    <div class="sidebar-footer">
+      <button id="logoutBtn" class="btn btn-secondary btn-block">
+        Çıkış Yap
+      </button>
+    </div>
+  </aside>
+
+  <!-- Ana İçerik -->
+  <main class="dashboard-main">
+    <!-- Üst Bar -->
+    <header class="dashboard-header">
+      <h1 id="restaurantName" class="dashboard-title">Merhaba, Restoran!</h1>
+      <div class="header-actions">
+        <button id="qrBtn" class="btn btn-secondary">
+          <span>QR Kod</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- İçerik -->
+    <div class="dashboard-content">
+      <!-- Yükleniyor -->
+      <div id="loading" class="loading" style="display: none;">
+        <div class="spinner"></div>
+        <p>Yükleniyor...</p>
+      </div>
+
+      <!-- Hata -->
+      <div id="error" class="error-message" style="display: none;" role="alert"></div>
+
+      <!-- İstatistikler -->
+      <section class="stats-grid" id="statsGrid" style="display: none;">
+        <div class="stat-card">
+          <div class="stat-icon">📂</div>
+          <div class="stat-content">
+            <p class="stat-label">Kategoriler</p>
+            <p class="stat-value" id="categoryCount">0</p>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon">🍔</div>
+          <div class="stat-content">
+            <p class="stat-label">Toplam Ürün</p>
+            <p class="stat-value" id="totalProducts">0</p>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon">✅</div>
+          <div class="stat-content">
+            <p class="stat-label">Aktif Ürün</p>
+            <p class="stat-value" id="activeProducts">0</p>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon">📸</div>
+          <div class="stat-content">
+            <p class="stat-label">Fotoğraflı Ürün</p>
+            <p class="stat-value" id="productsWithImages">0</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Hızlı İşlemler -->
+      <section class="quick-actions" id="quickActions" style="display: none;">
+        <h2>Hızlı İşlemler</h2>
+        <div class="actions-grid">
+          <a href="categories.html" class="action-card">
+            <div class="action-icon">➕</div>
+            <h3>Kategori Ekle</h3>
+            <p>Yeni bir kategori oluştur</p>
+          </a>
+
+          <a href="products.html" class="action-card">
+            <div class="action-icon">➕</div>
+            <h3>Ürün Ekle</h3>
+            <p>Yeni bir ürün ekle</p>
+          </a>
+
+          <a href="categories.html" class="action-card">
+            <div class="action-icon">✏️</div>
+            <h3>Kategorileri Yönet</h3>
+            <p>Mevcut kategorileri düzenle</p>
+          </a>
+
+          <a href="products.html" class="action-card">
+            <div class="action-icon">✏️</div>
+            <h3>Ürünleri Yönet</h3>
+            <p>Mevcut ürünleri düzenle</p>
+          </a>
+        </div>
+      </section>
+
+      <!-- QR Modal -->
+      <div id="qrModal" class="modal" style="display: none;">
+        <div class="modal-content">
+          <button class="modal-close" id="closeQrModal">✕</button>
+          <h2>Restoranın QR Kodu</h2>
+          <p>Bu linki müşterilere paylaş:</p>
+          <div class="qr-info">
+            <div id="qrCode" class="qr-placeholder"></div>
+            <div class="qr-link-box">
+              <input 
+                type="text" 
+                id="qrLink" 
+                readonly
+                class="qr-link-input"
+              />
+              <button id="copyQrBtn" class="btn btn-primary">Kopyala</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script type="module" src="js/dashboard.js"></script>
+</body>
+</html>
