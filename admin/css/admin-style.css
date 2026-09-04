@@ -1,0 +1,324 @@
+/* =========================================================
+   ADMIN PANEL - TEMEL STİL DOSYASI
+   Tasarım dili: Mevcut menü tasarımıyla aynı (oxblood + altın)
+   Responsive ve basit arayüz
+   ========================================================= */
+
+:root {
+  /* Renkler (Mevcut tasarımdan) */
+  --color-bg: #180f0d;
+  --color-bg-soft: #211512;
+  --color-surface: #261815;
+  --color-surface-hover: #2e1d19;
+  --color-oxblood: #7c1f17;
+  --color-oxblood-light: #9c2c20;
+  --color-ember: #c7301f;
+  --color-gold: #c9a24b;
+  --color-gold-soft: #c9a24b66;
+  --color-cream: #f4ece0;
+  --color-cream-dim: #cdbeae;
+  --color-line: #3a2620;
+  --color-success: #4ade80;
+  --color-error: #ef4444;
+  --color-warning: #f59e0b;
+
+  /* Tipografi */
+  --font-display: "Fraunces", Georgia, serif;
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  /* Boşluk */
+  --radius-card: 14px;
+  --radius-btn: 999px;
+  --radius-input: 8px;
+  --max-width: 1200px;
+  --touch-target: 48px;
+
+  /* Gölgeler */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* =========================================================
+   TEMEL SIFIRLAMA
+   ========================================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-cream);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: var(--color-gold);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--color-cream);
+}
+
+button {
+  font-family: inherit;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+/* =========================================================
+   BUTONLAR
+   ========================================================= */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: var(--touch-target);
+  padding: 12px 24px;
+  border-radius: var(--radius-btn);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.01em;
+  transition: all 0.2s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: var(--color-oxblood);
+  color: var(--color-cream);
+  border: 1px solid var(--color-gold-soft);
+}
+
+.btn-primary:hover:not(:disabled) {
+  background-color: var(--color-oxblood-light);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.btn-primary:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.btn-secondary {
+  background-color: var(--color-surface);
+  color: var(--color-cream);
+  border: 1px solid var(--color-line);
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background-color: var(--color-surface-hover);
+  border-color: var(--color-gold-soft);
+}
+
+.btn-success {
+  background-color: var(--color-success);
+  color: #000;
+}
+
+.btn-success:hover:not(:disabled) {
+  opacity: 0.9;
+}
+
+.btn-danger {
+  background-color: var(--color-error);
+  color: var(--color-cream);
+}
+
+.btn-danger:hover:not(:disabled) {
+  opacity: 0.9;
+}
+
+.btn-block {
+  width: 100%;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Loading spinner */
+.spinner {
+  width: 20px;
+  height: 20px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* =========================================================
+   FORM ELEMENTLERI
+   ========================================================= */
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: var(--color-cream);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="date"],
+textarea,
+select {
+  padding: 12px 14px;
+  border-radius: var(--radius-input);
+  background-color: var(--color-surface);
+  color: var(--color-cream);
+  border: 1px solid var(--color-line);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="number"]:focus,
+input[type="date"]:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--color-gold);
+  background-color: var(--color-surface-hover);
+  box-shadow: 0 0 0 3px rgba(201, 162, 75, 0.1);
+}
+
+input::placeholder {
+  color: var(--color-cream-dim);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* =========================================================
+   MESAJLAR (Hata, Başarı, Uyarı)
+   ========================================================= */
+
+.error-message {
+  padding: 12px 14px;
+  background-color: rgba(239, 68, 68, 0.1);
+  border-left: 4px solid var(--color-error);
+  border-radius: 4px;
+  color: #fca5a5;
+  font-size: 0.95rem;
+  margin-bottom: 16px;
+  display: none;
+}
+
+.error-message.show {
+  display: block;
+}
+
+.success-message {
+  padding: 12px 14px;
+  background-color: rgba(74, 222, 128, 0.1);
+  border-left: 4px solid var(--color-success);
+  border-radius: 4px;
+  color: #86efac;
+  font-size: 0.95rem;
+  margin-bottom: 16px;
+  display: none;
+}
+
+.success-message.show {
+  display: block;
+}
+
+.warning-message {
+  padding: 12px 14px;
+  background-color: rgba(245, 158, 11, 0.1);
+  border-left: 4px solid var(--color-warning);
+  border-radius: 4px;
+  color: #fcd34d;
+  font-size: 0.95rem;
+  margin-bottom: 16px;
+  display: none;
+}
+
+.warning-message.show {
+  display: block;
+}
+
+/* =========================================================
+   RESPONSIVE - KÜÇÜK EKRANLAR
+   ========================================================= */
+
+@media (max-width: 768px) {
+  .btn {
+    min-height: 44px;
+    padding: 10px 20px;
+    font-size: 0.95rem;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="number"],
+  input[type="date"],
+  textarea,
+  select {
+    font-size: 16px; /* iOS'ta zoom engeli için */
+  }
+}
+
+/* =========================================================
+   MOTION PREFERENCES
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* =========================================================
+   FOCUS-VISIBLE (Accessibility)
+   ========================================================= */
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 2px;
+}
