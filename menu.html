@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+
+<html lang="tr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1" name="viewport"/>
+<title>Ember Sofrası | Menü</title>
+<meta content="Ember Sofrası dijital menüsü — içecekler, ızgaralar, burgerler, tatlılar ve pizzalar." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="style.css" rel="stylesheet">
+</head>
+<body class="menu-page">
+<!-- ÜST BAR: Küçük marka başlığı + anasayfaya dönüş -->
+<header class="menu-topbar">
+<a class="topbar-brand" href="index.html">Ember Sofrası</a>
+</header>
+<!-- KATEGORİ NAVİGASYONU: yatay, mobilde kaydırılabilir, sticky -->
+<nav aria-label="Menü kategorileri" class="category-nav">
+<div class="category-nav-scroll">
+<button class="category-btn is-active" data-target="icecekler">İçecekler</button>
+<button class="category-btn" data-target="izgaralar">Izgaralar</button>
+<button class="category-btn" data-target="burgerler">Burgerler</button>
+<button class="category-btn" data-target="tatlilar">Tatlılar</button>
+<button class="category-btn" data-target="pizzalar">Pizzalar</button>
+</div>
+</nav>
+<main class="menu-content">
+<!-- ============ İÇECEKLER ============ -->
+<section class="category-section" id="icecekler">
+<div class="category-heading">
+<h2>İçecekler</h2>
+<p class="category-sub">Ferahlatan ve sıcak seçenekler</p>
+</div>
+<div class="product-grid">
+<article aria-expanded="false" aria-label="Ayran, 45 TL. İçeriği görmek için dokunun." class="product-card" role="button" tabindex="0"><div class="card-face card-face--front"><img alt="Ayran" loading="lazy" src="images/ayran.svg"/></div><div class="card-face card-face--back"><h3 class="product-name">Ayran</h3><p class="product-desc">Ev yapımı yoğurt, tuz, buz.</p><span class="product-price">45 TL</span></div></article>
+<article aria-expanded="false" aria-label="Kola, 60 TL. İçeriği görmek için dokunun." class="product-card" role="button" tabindex="0"><div class="card-face card-face--front"><img alt="Kola" loading="lazy" src="images/kola.svg"/></div><div class="card-face card-face--back"><h3 class="product-name">Kola</h3><p class="product-desc">330 ml kutu içecek.</p><span class="product-price">60 TL</span></div></article>
+<article aria-expanded="false" aria-label="Taze Sıkılmış Portakal Suyu, 75 TL. İçeriği görmek için dokunun." class="product-card" role="button" tabindex="0"><div class="card-face card-face--front"><img alt="Taze Sıkılmış Portakal Suyu" loading="lazy" src="images/portakal-suyu.svg"/></div><div class="card-face card-face--back"><h3 class="product-name">Taze Sıkılmış Portakal Suyu</h3><p class="product-desc">Mevsim portakalından, anında sıkılır.</p><span class="product-price">75 TL</span></div></article>
+<article aria-expanded="false" aria-label="Türk Kahvesi, 65 TL. İçeriği görmek için dokunun." class="product-card" role="button" tabindex="0"><div class="card-face card-face--front"><img alt="Türk Kahvesi" loading="lazy" src="images/turk-kahvesi.svg"/></div><div class="card-face card-face--back"><h3 class="product-name">Türk Kahvesi</h3><p class="product-desc">Sade, orta veya şekerli pişirilir, lokum eşliğinde.</p><span class="product-price">65 TL</span></div></article>
+<article aria-expanded="false" aria-label="Limonata, 70 TL. İçeriği görmek için dokunun." class="product-card" role="button" tabindex="0"><div class="card-face card-face--front"><img alt="Limonata" loading="lazy" src="images/limonata.svg"/></div><div class="card-face card-face--back"><h3 class="product-name">Limonata</h3><p class="product-desc">Taze limon, nane ve soda.</p><span class="product-price">70 TL</span></div></article>
+<article aria-expanded="false" aria-label="Maden Suyu, 40 TL. İçeriği görmek için dokunun." class="product-card" role="button" tabindex="0"><div class="card-face card-face--front"><img alt="Maden Suyu" loading="lazy" src="images/maden-suyu.svg"/></div><div class="card-face card-face--back"><h3 class="product-name">Maden Suyu</h3><p class="product-desc">200 ml, doğal kaynak suyu.</p><span class="product-price">40 TL</span></div></article>
+</div>
+</section>
+<!-- ============ IZGARALAR ============ -->
+<section class="category-section" id="izgaralar">
+<div class="category-heading">
+<h2>Izgaralar</h2>
+<p class="category-sub">Kömür ateşinde, geleneksel usul</p>
+</div>
+<div class="product-grid">
+<article aria-expanded="false" aria-label="Adana Kebap, 340 TL. İçeriği görmek için dokunun." class="product-card" role="button" tabindex="0"><div class="card-face card-face--front"><img alt="Adana Kebap" loading="lazy" src="images/adana-kebap.svg"/></div><div class="card-face card-face--back"><h3 class="product-name">Adana Kebap</h3><p class="product-desc">Dana/kuzu eti, közlenmiş biber, domates, pilav, lavaş.</p><span class="product-price">340 TL</span></div></article>
+<article aria-expanded="false" aria-label="Urfa Kebap, 340 TL. İçeriği görmek için dokunun." class="product-card" role="button" tabindex="0"><div class="card-face card-face--front"><img alt="Urfa Kebap" loading="lazy" src="images/urfa-kebap.svg"/></div><div class="card-face card-face--back"><h3 class="product-name">Urfa Kebap</h3><p class="product-desc">Acısız kıyma kebabı, közlenmiş sebze, pilav.</p><span class="product-price">340 TL</span></div></article>
+<article aria-expanded="false" aria-label="Kuzu Pirzola, 480 TL. İçeriği görmek için dokunun." class="product-card" role="button" tabindex="0"><div class="card-face card-face--front"><img alt="Kuzu Pirzola" loading="lazy" src="images/kuzu-pirzola.svg"/></div><div class="card-face card-face--back"><h3 class="product-name">Kuzu Pirzola</h3><p class="product-desc">Izgara kuzu pirzola, közlenmiş sebzeler, roka salatası.</p><span class="product-price">480 TL</span></div></article>
+<article aria-expanded="false" aria-label="Tavuk Şiş, 290 TL. İçeriği görmek için dokunun." class="product-card" role="button" tabindex="0"><div class="card-face card-face--front"><img alt="Tavuk Şiş" loading="lazy" src="images/tavuk-sis.svg"/></div><div class="card-face card-face--back"><h3 class="product-name">Tavuk Şiş</h3><p class="product-desc">Marine edilmiş tavuk göğsü, biber, domates, pilav.</p><span class="product-price">290 TL</span></div></article>
+<article aria-expanded="false" aria-label="Karışık Izgara, 520 TL. İçeriği görmek için dokunun." class="product-card" role="button" tabindex="0"><div class="card-face card-face--front"><img alt="Karışık Izgara" loading="lazy" src="images/karisik-izgara.svg"/></div><div class="card-face card-face--back"><h3 class="product-name">Karışık Izgara</h3><p class="product-desc">Adana, pirzola ve tavuk şiş bir arada, közlenmiş sebze.</p><span class="product-price">520 TL</span></div></article>
+</div>
+</section>
+<!-- ============ BURGERLER ============ -->
+<section class="category-section" id="burgerler">
+<div class="category-heading">
+<h2>Burgerler</h2>
+<p class="category-sub">El yapımı köfte, günlük ekmek</p>
+</div>
+<div class="product-grid">
+<article aria-expanded="false" aria-label="Cheeseburger, 280 TL. İçeriği görmek için dokunun." class="product-card" role="button" tabindex="0"><div class="card-face card-face--front"><img alt="Cheeseburger" loading="lazy" src="images/cheeseburger.svg"/></div><div class="card-face card-face--back"><h3 class="product-name">Cheeseburger</h3><p class="product-desc">Dana eti, cheddar peyniri, marul, domates, özel sos.</p><span class="product-price">280 TL</span></div></article>
+<article aria-expanded="false" aria-label="Klasik Burger, 260 TL. İçeriği görmek için dokunun." class="product-card" role="button" tabindex="0"><div class="card-face card-face--front"><img alt="Klasik Burger" loading="lazy" src="images/klasik-burger.svg"/></div><div class="card-face card-face--back"><h3 class="product-name">Klasik Burger</h3><p class="product-desc">Dana köfte, marul, domates, turşu, ketçap-hardal.</p><span class="product-price">260 TL</span></div></article>
+<article aria-expanded="false" aria-label="BBQ Bacon Burger, 320 TL. İçeriği görmek için dokunun." class="product-card" role="button" tabindex="0"><div class="card-face card-face--front"><img alt="BBQ Bacon Burger" loading="lazy" src="images/bbq-bacon-burger.svg"/></div><div class="card-face card-face--back"><h3 class="product-name">BBQ Bacon Burger</h3><p class="product-desc">Dana köfte, dana pastırma, cheddar, BBQ sos, soğan halkası.</p><span class="product-price">320 TL</span></div></article>
+<article aria-expanded="false" aria-label="Mantar Burger, 310 TL. İçeriği görmek için dokunun." class="product-card" role="button" tabindex="0"><div class="card-face card-face--front"><img alt="Mantar Burger" loading="lazy" src="images/mantar-burger.svg"/></div><div class="card-face card-face--back"><h3 class="product-name">Mantar Burger</h3><p class="product-desc">Dana köfte, karamelize mantar, füme peynir, trüf mayonez.</p><span class="product-price">310 TL</span></div></article>
+</div>
+</section>
+<!-- ============ TATLILAR ============ -->
+<section class="category-section" id="tatlilar">
+<div class="category-heading">
+<h2>Tatlılar</h2>
+<p class="category-sub">Sofranın son dokunuşu</p>
+</div>
+<div class="product-grid">
+<article aria-expanded="false" aria-label="Baklava, 180 TL. İçeriği görmek için dokunun." class="product-card" role="button" tabindex="0"><div class="card-face card-face--front"><img alt="Baklava" loading="lazy" src="images/baklava.svg"/></div><div class="card-face card-face--back"><h3 class="product-name">Baklava</h3><p class="product-desc">Antep fıstıklı, ince yufka, hafif şerbetli.</p><span class="product-price">180 TL</span></div></article>
+<article aria-expanded="false" aria-label="Künefe, 200 TL. İçeriği görmek için dokunun." class="product-card" role="button" tabindex="0"><div class="card-face card-face--front"><img alt="Künefe" loading="lazy" src="images/kunefe.svg"/></div><div class="card-face card-face--back"><h3 class="product-name">Künefe</h3><p class="product-desc">Sıcak servis, kaymaklı, fıstıklı.</p><span class="product-price">200 TL</span></div></article>
+<article aria-expanded="false" aria-label="Sufle, 190 TL. İçeriği görmek için dokunun." class="product-card" role="button" tabindex="0"><div class="card-face card-face--front"><img alt="Sufle" loading="lazy" src="images/sufle.svg"/></div><div class="card-face card-face--back"><h3 class="product-name">Sufle</h3><p class="product-desc">Sıcak çikolatalı sufle, vanilyalı dondurma eşliğinde.</p><span class="product-price">190 TL</span></div></article>
+<article aria-expanded="false" aria-label="Kazandibi, 150 TL. İçeriği görmek için dokunun." class="product-card" role="button" tabindex="0"><div class="card-face card-face--front"><img alt="Kazandibi" loading="lazy" src="images/kazandibi.svg"/></div><div class="card-face card-face--back"><h3 class="product-name">Kazandibi</h3><p class="product-desc">Geleneksel süt tatlısı, karamelize taban.</p><span class="product-price">150 TL</span></div></article>
+</div>
+</section>
+<!-- ============ PİZZALAR ============ -->
+<section class="category-section" id="pizzalar">
+<div class="category-heading">
+<h2>Pizzalar</h2>
+<p class="category-sub">Taş fırında, ince hamur</p>
+</div>
+<div class="product-grid">
+<article aria-expanded="false" aria-label="Margherita, 240 TL. İçeriği görmek için dokunun." class="product-card" role="button" tabindex="0"><div class="card-face card-face--front"><img alt="Margherita" loading="lazy" src="images/margherita.svg"/></div><div class="card-face card-face--back"><h3 class="product-name">Margherita</h3><p class="product-desc">Domates sos, mozzarella, taze fesleğen.</p><span class="product-price">240 TL</span></div></article>
+<article aria-expanded="false" aria-label="Sucuklu Pizza, 280 TL. İçeriği görmek için dokunun." class="product-card" role="button" tabindex="0"><div class="card-face card-face--front"><img alt="Sucuklu Pizza" loading="lazy" src="images/sucuklu-pizza.svg"/></div><div class="card-face card-face--back"><h3 class="product-name">Sucuklu Pizza</h3><p class="product-desc">Domates sos, mozzarella, kangal sucuk.</p><span class="product-price">280 TL</span></div></article>
+<article aria-expanded="false" aria-label="Karışık Pizza, 300 TL. İçeriği görmek için dokunun." class="product-card" role="button" tabindex="0"><div class="card-face card-face--front"><img alt="Karışık Pizza" loading="lazy" src="images/karisik-pizza.svg"/></div><div class="card-face card-face--back"><h3 class="product-name">Karışık Pizza</h3><p class="product-desc">Sucuk, sosis, mantar, biber, zeytin.</p><span class="product-price">300 TL</span></div></article>
+<article aria-expanded="false" aria-label="Truffle Pizza, 340 TL. İçeriği görmek için dokunun." class="product-card" role="button" tabindex="0"><div class="card-face card-face--front"><img alt="Truffle Pizza" loading="lazy" src="images/truffle-pizza.svg"/></div><div class="card-face card-face--back"><h3 class="product-name">Truffle Pizza</h3><p class="product-desc">Beyaz sos, mantar, trüf yağı, parmesan.</p><span class="product-price">340 TL</span></div></article>
+</div>
+</section>
+</main>
+<footer class="menu-footer">
+<p>Ember Sofrası — Afiyet olsun.</p>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>

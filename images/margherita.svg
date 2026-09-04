@@ -1,0 +1,16 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="margherita">
+  <defs>
+    <radialGradient id="bg20" cx="50%" cy="38%" r="70%">
+      <stop offset="0%" stop-color="#fbf3e6"/>
+      <stop offset="100%" stop-color="#eddcc0"/>
+    </radialGradient>
+  </defs>
+  <circle cx="100" cy="100" r="94" fill="url(#bg20)" stroke="#c9a24b" stroke-width="2.5"/>
+
+  <path d="M100 60 L146 148 Q100 164 54 148 Z" fill="#8a2418" stroke="#3f2013" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M58 140 Q100 154 142 140 L146 148 Q100 164 54 148 Z" fill="#c9a24b" stroke="#3f2013" stroke-width="2.5" stroke-linejoin="round"/>
+
+  <circle cx="88" cy="98" r="8" fill="#fff8ec"/><circle cx="112" cy="112" r="7" fill="#fff8ec"/><circle cx="96" cy="128" r="6" fill="#fff8ec"/>
+  <path d="M76 118 q6 -10 14 -2 q-6 10 -14 2 Z" fill="#7c8a4c" stroke="#3f2013" stroke-width="1.4"/>
+  <path d="M112 84 q6 -9 13 -2 q-5 9 -13 2 Z" fill="#7c8a4c" stroke="#3f2013" stroke-width="1.4"/>
+</svg>

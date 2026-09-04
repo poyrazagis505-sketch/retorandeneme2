@@ -1,0 +1,21 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="adana-kebap">
+  <defs>
+    <radialGradient id="bg7" cx="50%" cy="38%" r="70%">
+      <stop offset="0%" stop-color="#fbf3e6"/>
+      <stop offset="100%" stop-color="#eddcc0"/>
+    </radialGradient>
+  </defs>
+  <circle cx="100" cy="100" r="94" fill="url(#bg7)" stroke="#c9a24b" stroke-width="2.5"/>
+<line x1="46" y1="96" x2="154" y2="96" stroke="#5b3a24" stroke-width="4" stroke-linecap="round"/>
+  <rect x="51" y="80" width="26" height="32" rx="7" fill="#8a2418" stroke="#3f2013" stroke-width="2.5" transform="rotate(-6 64 96)"/>
+  <path d="M56 84 l16 4 M55 96 l17 3" stroke="#6b1a11" stroke-width="2" opacity="0.7"/>
+
+  <rect x="75" y="80" width="26" height="32" rx="7" fill="#8a2418" stroke="#3f2013" stroke-width="2.5" transform="rotate(-6 88 96)"/>
+  <path d="M80 84 l16 4 M79 96 l17 3" stroke="#6b1a11" stroke-width="2" opacity="0.7"/>
+
+  <rect x="99" y="80" width="26" height="32" rx="7" fill="#8a2418" stroke="#3f2013" stroke-width="2.5" transform="rotate(-6 112 96)"/>
+  <path d="M104 84 l16 4 M103 96 l17 3" stroke="#6b1a11" stroke-width="2" opacity="0.7"/>
+
+  <rect x="123" y="80" width="26" height="32" rx="7" fill="#8a2418" stroke="#3f2013" stroke-width="2.5" transform="rotate(-6 136 96)"/>
+  <path d="M128 84 l16 4 M127 96 l17 3" stroke="#6b1a11" stroke-width="2" opacity="0.7"/>
+<path d="M56 130 q44 22 88 0" fill="none" stroke="#3f2013" stroke-width="3" stroke-linecap="round"/><path d="M50 150 q50 26 100 0" fill="none" stroke="#3f2013" stroke-width="3" stroke-linecap="round" opacity="0.55"/></svg>

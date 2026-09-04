@@ -1,0 +1,21 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="limonata">
+  <defs>
+    <radialGradient id="bg5" cx="50%" cy="38%" r="70%">
+      <stop offset="0%" stop-color="#fbf3e6"/>
+      <stop offset="100%" stop-color="#eddcc0"/>
+    </radialGradient>
+  </defs>
+  <circle cx="100" cy="100" r="94" fill="url(#bg5)" stroke="#c9a24b" stroke-width="2.5"/>
+
+  <path d="M78 66 L122 66 L114 148 Q100 156 86 148 Z" fill="#fff8ec" opacity="0.35" stroke="#3f2013" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M83 92 L117 92 L111 144 Q100 150 89 144 Z" fill="#e3e79a"/>
+  <path d="M83 92 L117 92 L115.5 100 L84.5 100 Z" fill="#c7cf6e"/>
+  <ellipse cx="100" cy="66" rx="22" ry="6" fill="none" stroke="#3f2013" stroke-width="3"/>
+
+  <rect x="103" y="40" width="7" height="55" rx="3.5" fill="#7c8a4c" stroke="#3f2013" stroke-width="2.5" transform="rotate(12 106 60)"/>
+
+  <circle cx="72" cy="58" r="13" fill="#fff8ec" stroke="#3f2013" stroke-width="2.5"/>
+  <circle cx="72" cy="58" r="8.5" fill="#e9d98a" stroke="#3f2013" stroke-width="1.4"/>
+  <path d="M72 50 L72 66 M64.5 58 L79.5 58 M66.5 52.5 L77.5 63.5 M66.5 63.5 L77.5 52.5" stroke="#3f2013" stroke-width="1.1"/>
+  <path d="M118 54 q10 -6 16 2 q-10 4 -16 -2 Z" fill="#7c8a4c" stroke="#3f2013" stroke-width="1.6"/>
+</svg>

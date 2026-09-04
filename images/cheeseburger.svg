@@ -1,0 +1,20 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="cheeseburger">
+  <defs>
+    <radialGradient id="bg12" cx="50%" cy="38%" r="70%">
+      <stop offset="0%" stop-color="#fbf3e6"/>
+      <stop offset="100%" stop-color="#eddcc0"/>
+    </radialGradient>
+  </defs>
+  <circle cx="100" cy="100" r="94" fill="url(#bg12)" stroke="#c9a24b" stroke-width="2.5"/>
+
+  <path d="M62 92 q38 -30 76 0 Z" fill="#d9a86a" stroke="#3f2013" stroke-width="3" stroke-linejoin="round"/>
+  <circle cx="80" cy="80" r="2" fill="#fff8ec"/><circle cx="100" cy="74" r="2" fill="#fff8ec"/><circle cx="120" cy="80" r="2" fill="#fff8ec"/>
+  <path d="M60 96 q40 10 80 0 l-3 10 q-37 10 -74 0 Z" fill="#7c8a4c" stroke="#3f2013" stroke-width="2.5" stroke-linejoin="round"/>
+  
+  <path d="M60 102 q40 10 80 0 l-2 6 q-4 8 -10 2 l-4 6 q-4 8 -10 1 l-4 6 q-4 7 -10 1 l-4 6 q-4 7 -10 0 l-4 6 q-4 7 -10 0 l-4 6 q-4 6 -10 -1 Z"
+        fill="#c9a24b" stroke="#3f2013" stroke-width="2.2" stroke-linejoin="round"/>
+
+  <rect x="63" y="112" width="74" height="16" rx="4" fill="#5b3a24" stroke="#3f2013" stroke-width="2.5"/>
+  <path d="M65 128 q35 8 70 0 l-3 8 q-32 8 -64 0 Z" fill="#b8853f" stroke="#3f2013" stroke-width="2.5" stroke-linejoin="round"/>
+  <path d="M60 136 q40 14 80 0 v6 q-40 16 -80 0 Z" fill="#d9a86a" stroke="#3f2013" stroke-width="3" stroke-linejoin="round"/>
+</svg>

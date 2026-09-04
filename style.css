@@ -1,0 +1,462 @@
+/* =========================================================
+   EMBER SOFRASI — DİJİTAL MENÜ STİL DOSYASI
+   Tasarım dili: koyu kor/oxblood kırmızı zemin + altın vurgular
+   Tipografi: Fraunces (başlıklar) + Inter (gövde metni / arayüz)
+   ========================================================= */
+
+/* ---------- 1. TASARIM TOKENLARI (Renk / Tipografi / Boşluk) ---------- */
+:root {
+  /* Renkler */
+  --color-bg: #180f0d;              /* ana zemin: derin, sıcak kömür-siyahı */
+  --color-bg-soft: #211512;         /* biraz daha açık zemin (bölüm ayrımı için) */
+  --color-surface: #261815;         /* ürün kartı yüzeyi */
+  --color-surface-hover: #2e1d19;   /* kart hover durumu */
+  --color-oxblood: #7c1f17;         /* ana kırmızı (koyu/oxblood) */
+  --color-oxblood-light: #9c2c20;   /* buton hover kırmızısı */
+  --color-ember: #c7301f;           /* canlı vurgu kırmızısı (az kullanılır) */
+  --color-gold: #c9a24b;            /* altın vurgu */
+  --color-gold-soft: #c9a24b66;     /* yarı saydam altın (çizgiler için) */
+  --color-cream: #f4ece0;           /* ana metin rengi (koyu zeminde) */
+  --color-cream-dim: #cdbeae;       /* ikincil metin rengi */
+  --color-line: #3a2620;            /* ince ayraç çizgisi */
+
+  /* Tipografi */
+  --font-display: "Fraunces", Georgia, serif;
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  /* Boşluk / ölçek */
+  --radius-card: 14px;
+  --radius-btn: 999px;
+  --max-width: 1100px;
+
+  /* Dokunmatik hedef minimum boyutu */
+  --touch-target: 48px;
+}
+
+/* ---------- 2. TEMEL SIFIRLAMA ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth; /* kategori linklerinde smooth scroll için */
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-cream);
+  font-family: var(--font-body);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+/* Hareket azaltma tercihine saygı */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* Klavye ile gezinen kullanıcılar için görünür odak halkası */
+a:focus-visible,
+button:focus-visible,
+[role="button"]:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* =========================================================
+   3. ANA SAYFA
+   ========================================================= */
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 32px 24px;
+  overflow: hidden;
+}
+
+/* Arka planda hafif, yavaş nefes alan kor parıltısı — tek, kontrollü hareket */
+.hero-glow {
+  position: absolute;
+  inset: -20%;
+  background:
+    radial-gradient(circle at 50% 30%, rgba(124, 31, 23, 0.55), transparent 55%),
+    radial-gradient(circle at 20% 80%, rgba(201, 162, 75, 0.12), transparent 50%);
+  filter: blur(10px);
+  animation: emberBreathe 8s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes emberBreathe {
+  0%, 100% { opacity: 0.75; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.05); }
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.brand-mark {
+  width: 56px;
+  height: 56px;
+  margin-bottom: 18px;
+  color: var(--color-gold);
+}
+
+.flame-icon {
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+}
+
+.brand-name {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(2.4rem, 9vw, 3.4rem);
+  letter-spacing: 0.01em;
+  color: var(--color-cream);
+}
+
+.brand-tagline {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.15rem;
+  color: var(--color-gold);
+  margin-top: 6px;
+}
+
+.hero-desc {
+  margin-top: 22px;
+  font-size: 1rem;
+  color: var(--color-cream-dim);
+  line-height: 1.7;
+}
+
+.hero-footnote {
+  position: relative;
+  z-index: 1;
+  margin-top: 40px;
+  font-family: var(--font-display);
+  font-style: italic;
+  color: var(--color-cream-dim);
+  opacity: 0.6;
+  font-size: 0.95rem;
+}
+
+/* ---------- Butonlar ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: var(--touch-target);
+  padding: 0 34px;
+  margin-top: 34px;
+  border-radius: var(--radius-btn);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.01em;
+  transition: transform 0.18s ease, background-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.btn-primary {
+  background-color: var(--color-oxblood);
+  color: var(--color-cream);
+  border: 1px solid var(--color-gold-soft);
+  box-shadow: 0 8px 24px rgba(124, 31, 23, 0.35);
+}
+
+.btn-primary:hover,
+.btn-primary:focus-visible {
+  background-color: var(--color-oxblood-light);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(124, 31, 23, 0.45);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+/* =========================================================
+   4. MENÜ SAYFASI — ÜST BAR
+   ========================================================= */
+.menu-topbar {
+  padding: 18px 24px 10px;
+  text-align: center;
+}
+
+.topbar-brand {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.3rem;
+  color: var(--color-cream);
+}
+
+/* ---------- Kategori navigasyonu: yatay, sticky, kaydırılabilir ---------- */
+.category-nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: var(--color-bg);
+  border-bottom: 1px solid var(--color-line);
+  padding: 10px 0;
+}
+
+.category-nav-scroll {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 4px 16px;
+  /* Mobil tarayıcılarda kaydırma çubuğunu gizle */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.category-nav-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.category-btn {
+  flex: 0 0 auto;
+  min-height: var(--touch-target);
+  padding: 0 20px;
+  border-radius: var(--radius-btn);
+  border: 1px solid var(--color-line);
+  background-color: var(--color-bg-soft);
+  color: var(--color-cream-dim);
+  font-size: 0.92rem;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: background-color 0.18s ease, color 0.18s ease, border-color 0.18s ease;
+}
+
+.category-btn:hover {
+  border-color: var(--color-gold-soft);
+  color: var(--color-cream);
+}
+
+.category-btn.is-active {
+  background-color: var(--color-oxblood);
+  border-color: var(--color-oxblood);
+  color: var(--color-cream);
+}
+
+/* =========================================================
+   5. MENÜ İÇERİĞİ — KATEGORİ BÖLÜMLERİ VE ÜRÜN KARTLARI
+   ========================================================= */
+.menu-content {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 8px 20px 40px;
+}
+
+.category-section {
+  padding-top: 44px;
+  padding-bottom: 12px;
+  /* sticky üst bara takılmaması için kaydırma hedefine pay bırak */
+  scroll-margin-top: 78px;
+  border-bottom: 1px solid var(--color-line);
+}
+
+.category-section:last-of-type {
+  border-bottom: none;
+}
+
+.category-heading {
+  margin-bottom: 22px;
+}
+
+.category-heading h2 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.6rem, 5vw, 2rem);
+  color: var(--color-cream);
+}
+
+.category-sub {
+  margin-top: 4px;
+  font-size: 0.92rem;
+  color: var(--color-gold);
+  font-family: var(--font-display);
+  font-style: italic;
+}
+
+/* ---------- Ürün ızgarası ---------- */
+/* Kutucuklar artık yalnızca görsel gösterdiği için mobilde 2 sütun
+   halinde, bir fotoğraf galerisi gibi düzenlenir. */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  padding-bottom: 8px;
+}
+
+@media (min-width: 620px) {
+  .product-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+  }
+}
+
+@media (min-width: 960px) {
+  .product-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* ---------- Ürün kutucuğu ----------
+   Kutucuk sabit boyutlu bir "pencere" (overflow: hidden). İçinde iki
+   katman üst üste durur: ön yüz (yalnızca görsel) ve arka yüz (isim,
+   içerik, fiyat). Varsayılanda ön yüz görünür, arka yüz kutunun hemen
+   altında bekler. Tıklanınca ön yüz yukarı kayıp kayboluyor, arka yüz
+   aşağıdan yukarı kayarak onun yerini alıyor — ikisi de aynı kutu
+   sınırları içinde kalıyor. */
+.product-card {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-line);
+  cursor: pointer;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Fare kullanan cihazlarda hafif bir "tıklanabilir" ipucu */
+@media (hover: hover) and (pointer: fine) {
+  .product-card:hover,
+  .product-card:focus-visible {
+    border-color: var(--color-gold-soft);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+  }
+}
+
+.card-face {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: transform 0.5s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+/* Ön yüz: sadece görsel, kutuyu tamamen kaplar */
+.card-face--front {
+  transform: translateY(0);
+}
+
+.card-face--front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Arka yüz: isim + içerik + fiyat, kutunun hemen altında bekler */
+.card-face--back {
+  transform: translateY(100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 6px;
+  padding: 16px 12px;
+  background-color: var(--color-surface);
+  overflow-y: auto;
+}
+
+/* Kutucuk açık durumdayken: görsel yukarı kayıp kayboluyor,
+   içerik aşağıdan yukarı kayarak yerine geliyor */
+.product-card.is-open .card-face--front {
+  transform: translateY(-100%);
+}
+
+.product-card.is-open .card-face--back {
+  transform: translateY(0);
+}
+
+.product-name {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 1rem;
+  color: var(--color-gold);
+  line-height: 1.25;
+}
+
+.product-price {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--color-cream);
+}
+
+.product-desc {
+  font-size: 0.82rem;
+  color: var(--color-cream-dim);
+  line-height: 1.55;
+}
+
+@media (min-width: 620px) {
+  .product-name { font-size: 1.08rem; }
+  .product-desc { font-size: 0.88rem; }
+}
+
+/* ---------- Alt bilgi ---------- */
+.menu-footer {
+  text-align: center;
+  padding: 28px 20px 44px;
+  font-family: var(--font-display);
+  font-style: italic;
+  color: var(--color-cream-dim);
+  opacity: 0.65;
+  font-size: 0.9rem;
+}
+
+/* =========================================================
+   6. KÜÇÜK EKRAN İNCE AYARLARI (QR ile açılan telefonlar için)
+   ========================================================= */
+@media (max-width: 380px) {
+  .brand-name {
+    font-size: 2.1rem;
+  }
+  .menu-content {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+}

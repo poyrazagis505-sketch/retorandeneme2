@@ -1,0 +1,12 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="sucuklu-pizza">
+  <defs>
+    <radialGradient id="bg21" cx="50%" cy="38%" r="70%">
+      <stop offset="0%" stop-color="#fbf3e6"/>
+      <stop offset="100%" stop-color="#eddcc0"/>
+    </radialGradient>
+  </defs>
+  <circle cx="100" cy="100" r="94" fill="url(#bg21)" stroke="#c9a24b" stroke-width="2.5"/>
+
+  <path d="M100 60 L146 148 Q100 164 54 148 Z" fill="#8a2418" stroke="#3f2013" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M58 140 Q100 154 142 140 L146 148 Q100 164 54 148 Z" fill="#c9a24b" stroke="#3f2013" stroke-width="2.5" stroke-linejoin="round"/>
+<circle cx="90" cy="96" r="8" fill="#6b1a11" stroke="#3f2013" stroke-width="1.6"/><circle cx="112" cy="108" r="7" fill="#6b1a11" stroke="#3f2013" stroke-width="1.6"/><circle cx="96" cy="126" r="7" fill="#6b1a11" stroke="#3f2013" stroke-width="1.6"/><circle cx="120" cy="132" r="6" fill="#6b1a11" stroke="#3f2013" stroke-width="1.6"/><circle cx="78" cy="120" r="6" fill="#6b1a11" stroke="#3f2013" stroke-width="1.6"/></svg>
